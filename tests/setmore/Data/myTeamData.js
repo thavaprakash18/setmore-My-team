@@ -1,7 +1,7 @@
 const setmoreData = {
     loginURl : "https://go.staging.setmore.com",
     
-    username:"free1287@mailinator.com",
+    username: "automation@mailinator.com",
     password : "test123123",
 
     calendarUrl : "https://go.staging.setmore.com/calendar",
@@ -16,7 +16,7 @@ const setmoreData = {
     staffEmailID:"free1287@mailinator.com",
     staffPhonenumber:"+91 98765 43210",
     staffRole : "captain",
-    staffPermissionLevel: "Admin",
+    staffPermissionLevel: "Admin"
 
 }
 exports.loginURl=setmoreData.loginURl;

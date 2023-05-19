@@ -1,6 +1,6 @@
 //const {test, expect} = require('@playwright/test');
 const{username,loginURL,password,inboxURL}=require("../InputData/hellosellsCollabData")
-
+const{EmailIDInputBox,passwordInputBox,loginButton}=require("../Locators/loginPageLocators")
 
 exports.hellosellsLoginPage = class hellosellsLoginPage {
 
@@ -11,9 +11,9 @@ exports.hellosellsLoginPage = class hellosellsLoginPage {
   }
   async login() {
     await this.page.goto(loginURL);
-    await this.page.getByTestId('email-field').fill(username);
-    await this.page.getByTestId('password-field').fill(password);
-    await this.page.getByTestId('login-button').click();
+    await this.page.getByTestId(EmailIDInputBox).fill(username);
+    await this.page.getByTestId(passwordInputBox).fill(password);
+    await this.page.getByTestId(loginButton).click();
     await this.page.waitForURL(inboxURL)
    
   }

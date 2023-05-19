@@ -64,7 +64,7 @@ module.exports = defineConfig({
         ...devices["Desktop Chrome"],
         launchOptions: {
           args: ["--start-maximized"], // starting the browser in full screen
-          slowMo: 600, // a 1000 milliseconds pause before each operation. Useful for slow systems.
+         // slowMo: 600, // a 1000 milliseconds pause before each operation. Useful for slow systems.
         },
       },
     },

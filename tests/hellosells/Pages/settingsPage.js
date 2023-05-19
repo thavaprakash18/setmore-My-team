@@ -1,5 +1,6 @@
 const{settingsURL,collabName}=require("../InputData/hellosellsCollabData")
-
+const{myTeamOption,teamListOption,addTeamButton,teamNameInputField,addMemberOption,
+addMemberSearchField,addMemberButton,TeamSaveButton}=require("../Locators/settingsPageLocators")
 
 exports.hellosellsSettingsPage = class hellosellsSettingsPage {
 
@@ -14,32 +15,33 @@ exports.hellosellsSettingsPage = class hellosellsSettingsPage {
   }
   async clickMyTeam() {
    
-      await this.page.getByTestId('my-team-nav').click();
+      await this.page.getByTestId(myTeamOption).click();
    }
    async clickTeam() {
    
-      await this.page.getByTestId('teams-directory').click();
+      await this.page.getByTestId(teamListOption).click();
    }
+
    async clickAddTeam() {
    
-      await this.page.getByTestId('addteam-button').click();
+      await this.page.getByTestId(addTeamButton).click();
    }
    async enterTeamName() {
-   
-      await this.page.getByPlaceholder('Team name').fill(collabName);
+      await this.page.getByPlaceholder(teamNameInputField).fill(collabName);
    }
    async addFirst20StaffsInTeam() {
    
-      await this.page.getByTestId('add-member').click();
-      await this.page.getByTestId('search-input').click();
-      for (const li of await this.page.locator('xpath=.//li[@class="ignore-click has-avatar"]').all()){
+      await this.page.getByTestId(addMemberOption).click();
+      await this.page.getByTestId(addMemberSearchField).click();
+      for (const li of await this.page.locator(addMemberButton).all()){
       await li.click();
      }
      
    }
    async clickSaveButton() {
-   
-      await this.page.getByRole('button', { name: 'Save' }).click();
+      
+      await this.page.locator(TeamSaveButton).click();
+      
    }
 
   

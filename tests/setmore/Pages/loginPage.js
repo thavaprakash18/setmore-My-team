@@ -1,5 +1,5 @@
 const{username,loginURl,password,calendarUrl}=require("../Data/myTeamData")
-
+const{EmailIDInputBox,passwordInputBox,loginButton}=require("../Locators/loginPageLocators")
 
 exports.setmoreLoginPage = class setmoreLoginPage {
 
@@ -11,9 +11,9 @@ exports.setmoreLoginPage = class setmoreLoginPage {
 
   async login() {
     await this.page.goto(loginURl);
-    await this.page.getByRole('textbox', { name: 'Email' }).fill(username);
-    await this.page.getByPlaceholder('Password').fill(password);
-    await this.page.getByRole('link', { name: 'Login', exact: true }).click();
+    await this.page.locator(EmailIDInputBox).fill(username);
+    await this.page.locator(passwordInputBox).fill(password);
+    await this.page.locator(loginButton).click();
     await this.page.waitForURL(calendarUrl)
    
   }
