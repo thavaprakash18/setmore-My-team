@@ -25,8 +25,6 @@ const settingsPageLocators = {
     staffProfileThreeDotButton :'xpath=.//button[@id="ellipsisButton"]',
     staffProfileDelete:'phDetailDeleteContact',
     staffProfileDeleteConformation:'xpath=.//button[@class="awd-btn awd-btn-critical awd-btn--sm ml-2"]'
-
-    
 }       
 exports.AddStaffButton=settingsPageLocators.AddStaffButton;
 exports.fullNameField=settingsPageLocators.fullNameField;
