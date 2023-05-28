@@ -6,7 +6,6 @@ test.beforeEach(async ({page}) =>{
     const loginPage =new setmoreLoginPage(page)
     await loginPage.login();
 });
-
 test('add staff with Enchanced permission', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"john","hapi1111@mailinator.com")
     await settingsPage.gotoSettingsMyteam();
@@ -36,7 +35,6 @@ test('add staff with Standard permission', async({page})=>{
     await settingsPage.selectStandardPermissionLevelInAddStaffPopup();
     await settingsPage.clickAddButton();
     await settingsPage.checkStaffAddedInMyTeam();
-    
 })
 test('add staff with Admin permission', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"terro","hapi4444@mailinator.com")
@@ -73,7 +71,6 @@ test('add staff with invalid email ID', async({page})=>{
     await settingsPage.enterEmailIdInAddStaffPopup();
     await settingsPage.selectAdminPermissionLevelInAddStaffPopup();
     await settingsPage.AddButtonDisabled();
-
 }) 
 test('add No Access permission staff without email ID', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"james","")
@@ -91,7 +88,6 @@ test('add Standard permission staff without email ID', async({page})=>{
     await settingsPage.enterFullNameInAddStaffPopup();
     await settingsPage.selectStandardPermissionLevelInAddStaffPopup();
     await settingsPage.AddButtonDisabled();
-    
 }) 
 test('add Enhanced permission staff without email ID', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"adam","")
@@ -100,7 +96,6 @@ test('add Enhanced permission staff without email ID', async({page})=>{
     await settingsPage.enterFullNameInAddStaffPopup();
     await settingsPage.selectEnchancedPermissionLevelInAddStaffPopup();
     await settingsPage.AddButtonDisabled();
-    
 })
 test('add Admin permission staff without email ID', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"roy","")
@@ -109,7 +104,6 @@ test('add Admin permission staff without email ID', async({page})=>{
     await settingsPage.enterFullNameInAddStaffPopup();
     await settingsPage.selectAdminPermissionLevelInAddStaffPopup();
     await settingsPage.AddButtonDisabled();
-    
 })  
 test('add staff when staff name already in the my team list', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"kevin","hapi7777@mailinator.com")
@@ -129,7 +123,6 @@ test('add staff when staff name contains only special characters', async({page})
     await settingsPage.enterEmailIdInAddStaffPopup();
     await settingsPage.selectAdminPermissionLevelInAddStaffPopup();
     await settingsPage.clickAddButton();
-   
 }) 
 test('add staff when staff name contains only numbers', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"1234567","hapi1051@mailinator.com")
@@ -160,11 +153,9 @@ test('add staff with already existing Email ID', async({page})=>{
     await settingsPage.selectAdminPermissionLevelInAddStaffPopup();
     await settingsPage.clickAddButton();
     await settingsPage.EmailAlreadyExistWarningMsgShown();
-    
 })   
 test('delete the existing staff and add a new staff', async({page})=>{
     const settingsPage = new setmoreSettingsPage(page,"rick","")
-    
     await settingsPage.gotoSettingsMyteam();
     await settingsPage.deleteStaff();
     await settingsPage.clickAddStaffButton();
@@ -173,5 +164,4 @@ test('delete the existing staff and add a new staff', async({page})=>{
     await settingsPage.selectNoAccessPermissionLevelInAddStaffPopup();
     await settingsPage.clickAddButton();
     await settingsPage.checkStaffAddedInMyTeam();
-    
 })   
