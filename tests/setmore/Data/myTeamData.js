@@ -17,7 +17,6 @@ const setmoreData = {
     staffPhonenumber:"+91 98765 43210",
     staffRole : "captain",
     staffPermissionLevel: "Admin"
-
 }
 exports.loginURl=setmoreData.loginURl;
 exports.username=setmoreData.username;
